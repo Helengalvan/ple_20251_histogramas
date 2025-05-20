@@ -58,9 +58,6 @@ HistogramasTabla <- function(df){
      par(mfrow = c(1,1)) #regresar a una sola grafica
 }
 
-tabla <- data.frame(
-     "Tunif"= runif ( 1000,min=25, max=35),
-     "Texp" = rexp () row.names = NULL, check.rows = FALSE, check.names = TRUE, stringsAsFactors = default.stringsAsFactors())
 
 # histograma codigo del profe
 HistogramasTabla <- function(df){
@@ -90,15 +87,16 @@ HistogramasTabla <- function(df){
      par(mfrow = c(1, 1)) # Regresar a una sola gráfica
 }
 
-
 tabla <- data.frame(
     "Tunif"=runif(1000,min=25,max=35),
     "Texp"=rexp(1000,rate = 1/30),
     "TnormA"=rnorm(1000,mean=0,sd=2),
     "TnormB"=rnorm(1000,mean=10,sd=2),
-    "Enteros"=sample(1:10,10,replace = TRUE),
+    "Enteros"=sample(1:10, 1000, replace = TRUE),
     "Categoricos"=sample(LETTERS[1:26],1000,replace = TRUE)
 )
 
 HistogramasTabla(tabla)
 a <- mean (tabla$Tunif) # media de la variable Tunif
+
+write.csv(tabla, file = "misdatos.csv", row.names = FALSE) #guardar la tabla en un archivo csv
