@@ -1,5 +1,5 @@
 # Histogramas
-temperatura <- runif (25, min= 27, max= 36) # runif genera 1000 numeros aleatorios entre 27 y 36
+temperatura <- runif (100, min= 27, max= 36) # runif genera 1000 numeros aleatorios entre 27 y 36
 
 hist(temperatura,
      main = "Temperaturas en la ciudad de la Paz",
