@@ -38,3 +38,22 @@ hist(tabla_normal$temperatura,
      border = "black",
      breaks = 9,
      xlim = c(10,30))
+
+     # 20/05/25
+
+#tarea segun el profe
+HistogramasTabla <- function(df){
+     namvars <- names (df)
+     n <- length (namvars)
+     par (mfrow = c(1,n))# una fila n columnas
+     for(var in namvars){
+          #histograma para cada variable
+          hist(df[[var]],
+          main= var,
+          xlab = "Rangos",
+          ylab = "Frecuencia",
+          col = "Lightblue",
+          border = "Black")
+     }
+     par(mfrow = c(1,1)) #regresar a una sola grafica
+}
