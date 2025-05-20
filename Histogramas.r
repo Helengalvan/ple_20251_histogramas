@@ -57,3 +57,7 @@ HistogramasTabla <- function(df){
      }
      par(mfrow = c(1,1)) #regresar a una sola grafica
 }
+
+tabla <- data.frame(
+     "Tunif"= runif ( 1000,min=25, max=35),
+     "Texp" = rexp () row.names = NULL, check.rows = FALSE, check.names = TRUE, stringsAsFactors = default.stringsAsFactors())
