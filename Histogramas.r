@@ -100,3 +100,24 @@ HistogramasTabla(tabla)
 a <- mean (tabla$Tunif) # media de la variable Tunif
 
 write.csv(tabla, file = "misdatos.csv", row.names = FALSE) #guardar la tabla en un archivo csv
+
+
+tabla2 <- read.csv("misdatos.csv") # leer el archivo csv
+
+tablaA <- tabla2[tabla2$Categoricos=="A",] # filtrar la tabla para que solo contenga los datos de la categoria A
+mean(tablaA$Tunif) # calcular la media de la variable Tunif para la categoria A
+mean(tablaA$Texp) # calcular la media de la variable Texp para la categoria A
+
+time <- seq(0, 1, by = 0.01) # crear una secuencia de tiempo de 0 a 1 con un incremento de 0.01
+
+tablafuncs <- data.frame(
+     "tiempo" = time,
+     "sin" = sin(2 * pi * time), # funcion seno
+     "cos" = cos(2 * pi * time) # funcion coseno
+)
+
+plot(tablafuncs$tiempo, tablafuncs$sin, type = "l", col = "blue", lwd = 2, 
+     main = "Funciones Trigonométricas", 
+     xlab = "Tiempo (s)", ylab = "Valor")
+lines(tablafuncs$tiempo, tablafuncs$cos, col = "red", lwd = 2)
+legend("")
