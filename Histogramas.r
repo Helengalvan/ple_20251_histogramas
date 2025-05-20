@@ -101,3 +101,4 @@ tabla <- data.frame(
 )
 
 HistogramasTabla(tabla)
+a <- mean (tabla$Tunif) # media de la variable Tunif
